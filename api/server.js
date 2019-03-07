@@ -1,6 +1,6 @@
 const express = require('express');
 
-const Users = require('../user/usersModel.js');
+const Users = require('../users/userModel.js');
 
 const server = express();
 
@@ -14,7 +14,7 @@ server.get('/', async (req, res) => {
 server.post('/', async (req, res) => {
     try {
         const { id } = await Users.insert(req.body)
-        const newUser = await Users.getCard(id);
+        const newUser = await Users.getUser(id);
         res.status(201).json(newUser);
     } catch (error) {
         res.status(500).json(error);
