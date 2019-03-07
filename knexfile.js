@@ -7,6 +7,7 @@ module.exports = {
     connection: {
       filename: './data/users.db3'
     },
+    useNullAsDefault: true,
     migrations: {
       directory: './data/migrations'
     },
@@ -14,7 +15,19 @@ module.exports = {
       directory: './data/seeds'
     }
   },
-
+  testing: {
+    client: 'sqlite3',
+    connection: {
+      filename: './data/users.db3',
+    },
+    useNullAsDefault: true,
+    migrations: {
+      directory: './data/migrations',
+    },
+    seeds: {
+      directory: './data/seeds',
+    },
+  },
   staging: {
     client: 'postgresql',
     connection: {
@@ -30,6 +43,7 @@ module.exports = {
       tableName: 'knex_migrations'
     }
   },
+  
 
   production: {
     client: 'postgresql',
