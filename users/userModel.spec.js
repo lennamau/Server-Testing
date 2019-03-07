@@ -40,8 +40,8 @@ describe('users model', () => {
             // should be 1 user is db after the insert
             expect(allUsers.length).toBe(1);
             // call the remove user function
-            await users.remove(1);
-            allUsers = await users.getAll();
+            await Users.remove(1);
+            allUsers = await Users.getAll();
             // expect users to be empty after the remove
             expect(allUsers.length).toBe(0);
         });

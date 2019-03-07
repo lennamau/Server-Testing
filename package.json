@@ -2,9 +2,10 @@
 	"name": "testingserver",
 	"version": "1.0.0",
 	"description": "Server Testing Project",
-	"main": "server.js",
+	"main": "index.js",
 	"scripts": {
-		"test": "jest --watch --verbose"
+		"test": "jest --watch --verbose",
+		"server": "nodemon index.js"
 	},
 	"jest": {
 		"testEnvironment": "node"
@@ -26,6 +27,7 @@
 		"supertest": "^3.4.2"
 	},
 	"dependencies": {
+		"dotenv": "^6.2.0",
 		"express": "^4.16.4",
 		"knex": "^0.16.3",
 		"sqlite3": "^4.0.6"
